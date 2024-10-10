@@ -15,5 +15,5 @@ const userLoggedIn = false; // Set to true if the user is logged in
 if (userLoggedIn) {
     loginStatus.innerHTML = 'Logged in';
 } else {
-    loginStatus.innerHTML = '<a href="">Login</a>';
+    loginStatus.innerHTML = '<a href="login_page.html">Login</a></p>';
 }
