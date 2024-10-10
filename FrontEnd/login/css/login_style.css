@@ -1,0 +1,105 @@
+/* Login Page Styling with Gradient Background */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced box shadow for more depth */
+    width: 300px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #6a11cb; /* Changed to match the gradient */
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.input-box input:focus {
+    border-bottom: 2px solid #6a11cb; /* Matches the gradient */
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 0;
+    color: #6a11cb; /* Matches the gradient */
+    font-size: 12px;
+}
+
+.btn {
+    background-color: #6a11cb; /* Matches the gradient */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #2575fc; /* Darker blue to match the gradient */
+}
+
+p {
+    margin-top: 20px;
+    color: #111; /* Light color to contrast with the gradient background */
+}
+
+p a {
+    color: #2575fc; /* Bright color to stand out against the background */
+    text-decoration: none;
+    text-align: center;
+    font-size: larger;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
