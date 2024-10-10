@@ -1,7 +1,7 @@
 /* Body and Background Styling */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
     margin: 0;
     padding: 0;
 }
@@ -78,7 +78,7 @@ header {
     border-radius: 1px;
     overflow: hidden;
     min-width: 150px;
-    margin-top: 12px;
+    margin-top: 20px;
 }
 .dropdown-menu a {
     text-decoration: none;
@@ -146,4 +146,141 @@ main p {
 
 .hamburger-menu.active .dropdown-menu {
     display: block; /* Show dropdown when active */
+}
+
+
+/* Main Content Styling */
+main {
+    padding: 6px 350px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; /* Hide overflow to create a neat scrolling effect */
+}
+
+/* Marquee Styles */
+.marquee {
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position for absolute child */
+    background-color: #ff9800;
+}
+
+.marquee-content p {
+    display: inline-block; /* Allow horizontal scrolling */
+    animation: scroll 12s linear infinite; /* Control scroll speed and direction */
+    margin: 0;
+    padding: 5px;
+    font-weight: bolder;
+    color: black;
+}
+
+/* Scrolling Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Start off the screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move off the screen to the left */
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #fff; /* White background for the footer */
+    padding: 20px 0; /* Padding around the footer */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    color: #6a11cb; /* Text color */
+    text-align: center; /* Center-align text */
+    position: fixed; /* Fixed positioning */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom */
+}
+
+/* Footer Content Flexbox */
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Side padding */
+}
+
+/* Logo Section */
+footer .Logo {
+    display: flex;
+    flex-direction: column; /* Stack logo and text */
+    align-items: flex-start; /* Align items to the left */
+}
+
+footer img {
+    width: 130px; /* Max width for the logo */
+    margin-left: 20px;
+}
+
+/* Copyright Text */
+footer p {
+    margin: 10px 0; /* Space around the copyright text */
+    font-size: 14px; /* Font size for the copyright text */
+}
+
+/* Details Section */
+footer .Details {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-end; /* Align items to the right */
+    margin: 15px 0; /* Space around the navigation links */
+}
+
+footer .Details a {
+    color: #6a11cb; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 5px 0; /* Space between links */
+    font-size: 14px; /* Font size for links */
+    transition: color 0.3s; /* Transition for color change on hover */
+}
+
+footer .Details a:hover {
+    color: #2575fc; /* Change color on hover */
+}
+
+/* Social Media Section */
+footer .social-media {
+    text-align: center; /* Center the social media links */
+    margin-top: 15px; /* Space above social media links */
+}
+
+footer .social-media a {
+    display: inline-flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    color: #6a11cb; /* Color for social media links */
+    margin: 0 10px; /* Space between icons */
+    font-size: 14px; /* Font size for social media links */
+    text-decoration: none; /* Remove underline from social media links */
+}
+
+footer .social-media img {
+    width: 35px; /* Icon width */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer .Details {
+        align-items: center; /* Center details section on smaller screens */
+    }
+
+    footer .Details a {
+        display: block; /* Stack links on smaller screens */
+        margin: 5px 0; /* Space between stacked links */
+    }
+
+    footer .social-media {
+        flex-wrap: wrap; /* Allow wrapping of social media links */
+        justify-content: center; /* Center social media links */
+    }
+
+    footer .social-media a {
+        margin: 5px; /* Space between social media icons */
+    }
 }
