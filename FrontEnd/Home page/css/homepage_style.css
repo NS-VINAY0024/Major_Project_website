@@ -7,6 +7,7 @@ body {
 }
 
 /* Header Styling */
+/* Header Styling */
 header {
   display: flex;
   justify-content: space-between;
@@ -14,6 +15,16 @@ header {
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+  display: flex;
+  align-items: center; /* Align the logo and text in a single row */
+}
+
+.left-section .logo {
+  max-width: 50px; /* Adjust the logo size */
+  margin-right: 20px; /* Space between logo and navigation */
 }
 
 .left-section ul {
@@ -43,12 +54,14 @@ header {
   display: flex;
   align-items: center;
 }
+
 .right-section a {
   text-decoration: none;
   color: #6a11cb;
   font-size: 18px;
   font-weight: bold;
 }
+
 .cart {
   margin-right: 20px;
 }
@@ -66,6 +79,7 @@ header {
   font-size: 28px;
   color: #6a11cb;
 }
+
 
 /* Dropdown Menu Styling */
 .dropdown-menu {
@@ -213,13 +227,14 @@ footer .Logo {
 }
 
 footer img {
-  width: 130px; /* Max width for the logo */
+  max-width: 100px; /* Max width for the logo */
   margin-left: 20px;
-  margin-top: 30px;
 }
 
 /* Copyright Text */
 footer p {
+  margin: 0;
+  padding: 0;
   margin-bottom: 4px; /* Space around the copyright text */
   font-size: 15px; /* Font size for the copyright text */
 }
@@ -248,11 +263,11 @@ footer .Details a:hover {
 /* Social Media Section */
 footer .social-media {
   text-align: center; /* Center the social media links */
-  margin-top: 15px; /* Space above social media links */
+  margin-top: 70px; /* Space above social media links */
 }
 
 footer .social-media a {
-  display: inline-flex; /* Align items in a row */
+  display: inline-flexbox; /* Align items in a row */
   align-items: center; /* Center items vertically */
   color: #6a11cb; /* Color for social media links */
   margin: 0 10px; /* Space between icons */
@@ -261,7 +276,7 @@ footer .social-media a {
 }
 
 footer .social-media img {
-  width: 35px; /* Icon width */
+  width: 30px; /* Icon width */
   margin-right: 5px; /* Space between icon and text */
 }
 
