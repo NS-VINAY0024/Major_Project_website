@@ -91,14 +91,17 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
   overflow: hidden;
-  min-width: 150px;
+  min-width: 100px;
   margin-top: 20px;
+  padding: 0;
 }
+
 .dropdown-menu a {
   text-decoration: none;
   position: relative;
-  padding: 5px;
+  padding: auto;
 }
+
 .dropdown-menu a::after {
   position: absolute;
   content: "";
@@ -110,6 +113,7 @@ header {
   background-color: #0a65c7;
   transition: transform 0.1s ease-in-out;
 }
+
 .dropdown-menu a:hover::after {
   transform: scaleX(1);
 }
@@ -139,28 +143,10 @@ header {
   color: #6a11cb;
 }
 
-/* Main Content Styling */
-main {
-  padding: 50px;
-  text-align: center;
-  color: #fff;
+.hamburger-menu:hover .dropdown-menu {
+  display: block; /* Show dropdown when hovering over the hamburger icon */
 }
 
-main h1 {
-  font-size: 36px;
-}
-
-main p {
-  font-size: 18px;
-}
-
-.dropdown-menu {
-  display: none;
-}
-
-.hamburger-menu.active .dropdown-menu {
-  display: block; /* Show dropdown when active */
-}
 
 /* Main Content Styling */
 main {
@@ -168,6 +154,12 @@ main {
   text-align: center;
   color: #fff;
   overflow: hidden; /* Hide overflow to create a neat scrolling effect */
+}
+main h1 {
+  font-size: 36px;
+}
+main p {
+  font-size: 18px;
 }
 
 /* Marquee Styles */
