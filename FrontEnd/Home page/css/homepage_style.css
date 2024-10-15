@@ -1,7 +1,7 @@
 /* Body and Background Styling */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  background: linear-gradient(90deg, #111111 20%, #373737 100%);
   margin: 0;
   padding: 0;
 }
@@ -12,7 +12,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background: linear-gradient(90deg, #000000 25%, #575757 75%);
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -23,7 +23,7 @@ header {
 }
 
 .left-section .logo {
-  max-width: 50px; /* Adjust the logo size */
+  max-width: 70px; /* Adjust the logo size */
   margin-right: 20px; /* Space between logo and navigation */
 }
 
@@ -40,7 +40,7 @@ header {
 
 .left-section ul li a {
   text-decoration: none;
-  color: #6a11cb;
+  color: silver;
   font-size: 18px;
   font-weight: bold;
 }
@@ -67,17 +67,18 @@ header {
 }
 
 .cart-icon {
-  width: 46px;
+  width: 30px;
 }
 
 .hamburger-menu {
   position: relative;
   cursor: pointer;
+  padding: 10px;
 }
 
 .hamburger-menu span {
-  font-size: 28px;
-  color: #6a11cb;
+  font-size: 30px;
+  color:silver;
 }
 
 
@@ -87,7 +88,7 @@ header {
   position: absolute;
   right: 0;
   top: 40px; /* Adjust this value to create space below the Hamburger icon */
-  background-color: #fff;
+  background-color: #575757;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
   overflow: hidden;
@@ -110,7 +111,7 @@ header {
   left: 0;
   bottom: 0;
   transform: scaleX(0);
-  background-color: #0a65c7;
+  background-color: #373737;
   transition: transform 0.1s ease-in-out;
 }
 
@@ -130,17 +131,17 @@ header {
 
 .dropdown-menu ul li a {
   text-decoration: none;
-  color: #6a11cb;
+  color: #000000;
   font-size: 16px;
 }
 
 .dropdown-menu ul li a:hover {
-  color: #2575fc;
+  color: #474747;
 }
 
 #login-status {
   font-size: 16px;
-  color: #6a11cb;
+  color: #000000;
 }
 
 .hamburger-menu:hover .dropdown-menu {
@@ -152,7 +153,7 @@ header {
 main {
   padding: 6px 350px;
   text-align: center;
-  color: #fff;
+  color:silver;
   overflow: hidden; /* Hide overflow to create a neat scrolling effect */
 }
 main h1 {
@@ -172,7 +173,7 @@ main p {
 
 .marquee-content p {
   display: inline-block; /* Allow horizontal scrolling */
-  animation: scroll 12s linear infinite; /* Control scroll speed and direction */
+  animation: scroll 20s linear infinite; /* Control scroll speed and direction */
   margin: 0;
   padding: 5px;
   font-weight: bolder;
@@ -191,10 +192,10 @@ main p {
 
 /* Footer Styling */
 footer {
-  background-color: #fff; /* White background for the footer */
+  background: linear-gradient(90deg, #000000 25%, #575757 75%);
   /* padding: 20px; Padding around the footer */
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  color: #6a11cb; /* Text color */
+  color: silver; /* Text color */
   text-align: center; /* Center-align text */
   position: fixed; /* Fixed positioning */
   width: 100%; /* Full width */
@@ -240,7 +241,7 @@ footer .Details {
 }
 
 footer .Details a {
-  color: #6a11cb; /* Link color */
+  color: silver; /* Link color */
   text-decoration: none; /* Remove underline from links */
   margin: 5px 0; /* Space between links */
   font-size: 20px; /* Font size for links */
