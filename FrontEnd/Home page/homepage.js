@@ -10,3 +10,23 @@ if (userLoggedIn) {
 } else {
     loginStatus.innerHTML = '<a href="login_page.html">Login</a>';
 }
+document.getElementById('hamburgerMenu').addEventListener('click', function () {
+    const dropdown = document.getElementById('dropdownMenu');
+
+    // Toggle the dropdown menu
+    if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+});
+
+// Optional: Close the dropdown when clicking outside
+document.addEventListener('click', function (event) {
+    const dropdown = document.getElementById('dropdownMenu');
+    const menu = document.getElementById('hamburgerMenu');
+
+    if (!menu.contains(event.target)) {
+        dropdown.style.display = 'none';
+    }
+});
