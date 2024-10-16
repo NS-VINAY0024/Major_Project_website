@@ -150,7 +150,7 @@ header {
 
 
 /* Main Content Styling */
-main {
+.main-contents {
   padding: 0;
   margin: 0;
   display: grid;

@@ -30,3 +30,22 @@ document.addEventListener('click', function (event) {
         dropdown.style.display = 'none';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Add event listener to the Map link
+    document.getElementById('mapButton').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the link from navigating away
+
+        // Get the main content area by its ID
+        const mainContent = document.getElementById('mainContent');
+
+        // Replace the content inside the main section with the map image
+        mainContent.innerHTML = `
+            <h1 style ="color:silver">Smart Mart Map</h1>
+            <div class="map-container">
+                <img src="image/Mart map.png" alt="Smart Mart Map" style="width: 100%; height: auto;">
+            </div>
+        `;
+    });
+});
+
