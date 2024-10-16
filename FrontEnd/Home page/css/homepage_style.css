@@ -1,30 +1,32 @@
 /* Body and Background Styling */
 body {
   font-family: Arial, sans-serif;
-  background: #2d2d2d;
+  background: linear-gradient(90deg, #000000 25%, #232323 75%);
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-rows: auto 4fr auto; /* Header, content, footer */
+  min-height: 100vh;
 }
 
 /* Header Styling */
-/* Header Styling */
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Left section and right section */
   align-items: center;
-  background: linear-gradient(90deg, #000000 25%, #575757 75%);
+  background: linear-gradient(90deg, #000000 25%, #313131 75%);
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .left-section {
   display: flex;
-  align-items: center; /* Align the logo and text in a single row */
+  align-items: center; /* Align logo and nav in a row */
 }
 
 .left-section .logo {
-  max-width: 70px; /* Adjust the logo size */
-  margin-right: 20px; /* Space between logo and navigation */
+  max-width: 70px; /* Logo size */
+  margin-right: 20px;
 }
 
 .left-section ul {
@@ -52,6 +54,7 @@ header {
 /* Right-side Section (Cart and Hamburger) */
 .right-section {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -73,28 +76,26 @@ header {
 .hamburger-menu {
   position: relative;
   cursor: pointer;
-  padding: 10px;
+  padding: 20px 0px;
 }
 
-.hamburger-menu span {
+.hamburger-menu div {
   font-size: 30px;
-  color:silver;
+  color: silver;
 }
-
 
 /* Dropdown Menu Styling */
 .dropdown-menu {
   display: none;
   position: absolute;
   right: 0;
-  top: 40px; /* Adjust this value to create space below the Hamburger icon */
+  top: 50px;
   background-color: #534e4ea2;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
   overflow: hidden;
   min-width: 100px;
   margin-top: 20px;
-  padding: 0;
 }
 
 .dropdown-menu a {
@@ -121,8 +122,8 @@ header {
 
 .dropdown-menu ul {
   list-style: none;
-  margin-top: 0;
   padding: 0;
+  margin-top: 0;
 }
 
 .dropdown-menu ul li {
@@ -130,13 +131,12 @@ header {
 }
 
 .dropdown-menu ul li a {
-  text-decoration: none;
-  color: #f9fafa;
+  color: #fafafa;
   font-size: 16px;
 }
 
 .dropdown-menu ul li a:hover {
-  color: #7f6969;
+  color: #696969;
 }
 
 #login-status {
@@ -145,35 +145,50 @@ header {
 }
 
 .hamburger-menu:hover .dropdown-menu {
-  display: block; /* Show dropdown when hovering over the hamburger icon */
+  display: block;
 }
-
 
 /* Main Content Styling */
 main {
-  padding: 6px 350px;
+  padding: 6px 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto; /* 2-column grid for desktop */
+  grid-template-rows: 0.3fr 0.3fr 5fr;
+  gap: 10px;
   text-align: center;
-  color: silver ;
-  overflow: hidden; /* Hide overflow to create a neat scrolling effect */
+  color: silver;
+}
+span {
+  background-color: rgb(190, 31, 31);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
 }
 main h1 {
   font-size: 36px;
+  grid-column: span 1; /* Full width heading */
 }
+
 main p {
   font-size: 18px;
 }
 
 /* Marquee Styles */
 .marquee {
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  position: relative; /* Position for absolute child */
-  background-color: #ff9800;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #dbe914;
+  grid-column: span 1;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .marquee-content p {
-  display: inline-block; /* Allow horizontal scrolling */
-  animation: scroll 23s linear infinite; /* Control scroll speed and direction */
+  display: inline-block;
+  animation: scroll 15s linear infinite;
   margin: 0;
   padding: 5px;
   font-weight: bolder;
@@ -183,113 +198,90 @@ main p {
 /* Scrolling Animation */
 @keyframes scroll {
   0% {
-    transform: translateX(100%); /* Start off the screen to the right */
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%); /* Move off the screen to the left */
+    transform: translateX(-100%);
   }
 }
 
 /* Footer Styling */
 footer {
-  background: linear-gradient(45deg, #000000 25%, #575757 75%);
-  /* padding: 20px; Padding around the footer */
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  color: silver; /* Text color */
-  text-align: center; /* Center-align text */
-  position: fixed; /* Fixed positioning */
-  width: 100%; /* Full width */
-  bottom: 0; /* Stick to the bottom */
+  background: linear-gradient(45deg, #000000 25%, #313131 75%);
+  color: silver;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3-column layout */
+  grid-template-rows: 1fr 1fr; 
+  align-items: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Content Flexbox */
 .footer-content {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center items vertically */
-  max-width: auto; /* Maximum width for the content */
-  margin: 0 auto; /* Center the footer content */
-  padding: 0 auto; /* Side padding */
+  display: contents; /* Keep grid structure */
 }
 
-/* Logo Section */
 footer .Logo {
   display: flex;
-  flex-direction: column; /* Stack logo and text */
-  align-items: flex-start; /* Align items to the left */
+  flex-direction: column;
+  align-items: flex-start;
+  grid-row: 1/3;
+  grid-column: 1/2;
+}
+
+footer .Logo img {
+  max-width: 100px;
 }
 
 footer img {
-  max-width: 100px; /* Max width for the logo */
+  max-width: 40px;
   margin-left: 20px;
 }
-
-/* Copyright Text */
-footer p {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 4px; /* Space around the copyright text */
-  font-size: 15px; /* Font size for the copyright text */
+footer .social-media {
+  text-align: center;
 }
 
-/* Details Section */
+footer .social-media a {
+  color: #6a11cb;
+  margin: 0;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 footer .Details {
   display: flex;
-  flex-direction: column; /* Stack links vertically */
-  align-items: flex-end; /* Align items to the right */
-  margin-right: 10px; /* Space around the navigation links */
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
+  grid-row: span 2;
 }
 
 footer .Details a {
-  color: silver; /* Link color */
-  text-decoration: none; /* Remove underline from links */
-  margin: 5px 0; /* Space between links */
-  font-size: 20px; /* Font size for links */
-  transition: color 0.3s; /* Transition for color change on hover */
+  color: silver;
+  text-decoration: none;
+  margin: 5px 0;
+  font-size: 20px;
   font-weight: 700;
 }
 
 footer .Details a:hover {
-  color: #2575fc; /* Change color on hover */
+  color: #2575fc;
 }
 
-/* Social Media Section */
-footer .social-media {
-  text-align: center; /* Center the social media links */
-  margin-top: 70px; /* Space above social media links */
-}
-
-footer .social-media a {
-  display: inline-flexbox; /* Align items in a row */
-  align-items: center; /* Center items vertically */
-  color: #6a11cb; /* Color for social media links */
-  margin: 0 10px; /* Space between icons */
-  font-size: 14px; /* Font size for social media links */
-  text-decoration: none; /* Remove underline from social media links */
-}
-
-footer .social-media img {
-  width: 30px; /* Icon width */
-  margin-right: 5px; /* Space between icon and text */
-}
-
-/* Responsive Design */
+/* Responsive Grid Layout */
 @media (max-width: 768px) {
-  footer .Details {
-    align-items: center; /* Center details section on smaller screens */
+  /* Stack layout for smaller screens */
+  header {
+    grid-template-columns: 1fr;
   }
 
-  footer .Details a {
-    display: block; /* Stack links on smaller screens */
-    margin: 5px 0; /* Space between stacked links */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  footer .social-media {
-    flex-wrap: wrap; /* Allow wrapping of social media links */
-    justify-content: center; /* Center social media links */
-  }
-
-  footer .social-media a {
-    margin: 5px; /* Space between social media icons */
+  main {
+    grid-template-columns: 1fr; /* Single column layout on mobile */
+    padding: 6px 10px;
   }
 }
