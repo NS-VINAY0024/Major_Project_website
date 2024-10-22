@@ -1,11 +1,11 @@
 /* Body and Background Styling */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(90deg, #000000 25%, #232323 75%);
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-rows: auto 4fr auto; /* Header, content, footer */
+  grid-template-rows: auto auto auto; /* Header, content, footer */
   min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Left section and right section */
   align-items: center;
-  background: linear-gradient(90deg, #000000 25%, #313131 75%);
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -48,7 +48,7 @@ header {
 }
 
 .left-section ul li a:hover {
-  color: #7f6969;
+  color: #2575fc;
 }
 
 /* Right-side Section (Cart and Hamburger) */
@@ -56,13 +56,6 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-
-.right-section a {
-  text-decoration: none;
-  color: #6a11cb;
-  font-size: 18px;
-  font-weight: bold;
 }
 
 .cart {
@@ -89,7 +82,8 @@ header {
   position: absolute;
   right: 0;
   margin-top: 30px;
-  background-color: #534e4ea2;
+  background-color:rgba(106, 17, 203, 0.4)
+;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
@@ -156,7 +150,6 @@ header {
   display: grid;
   grid-template-columns: auto; /* 2-column grid for desktop */
   grid-template-rows: 0.3fr 0.3fr 0.3fr 5fr ;
-  gap: 10px;
   text-align: center;
   color: silver;
 }
@@ -207,22 +200,115 @@ main p {
   }
 }
 
+/* General styling for the carousel container */
+.cards-carousel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 8;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Wrapper for the cards */
+.cards-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual card styling */
+.card {
+    min-width: 100%; /* Each card takes up 100% of the width */
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.card img {
+    max-width: 40%;
+    border-radius: 5px;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(106, 17, 203, 1);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Navigation dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: rgba(106, 17, 203, 1); /* Active dot color */
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 1024px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(8, 100%); /* Show 1 card at a time */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(8, 100%); /* Show 1 card at a time */
+    }
+}
 
 
 /* Footer Styling */
 footer {
-  background: linear-gradient(45deg, #000000 25%, #313131 75%);
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   color: silver;
-  padding: 20px;
+  padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* 3-column layout */
-  grid-template-rows: 1fr 1fr; 
+  grid-template-rows: 0.5fr 0.1fr; 
   align-items: center;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
   display: contents; /* Keep grid structure */
+}
+
+.copyright{
+  color: #d3d3d3;
+  font-size: 1rem;
 }
 
 footer .Logo {
@@ -239,17 +325,10 @@ footer .Logo img {
 
 footer img {
   max-width: 40px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 footer .social-media {
   text-align: center;
-}
-
-footer .social-media a {
-  color: #6a11cb;
-  margin: 0;
-  font-size: 14px;
-  text-decoration: none;
 }
 
 footer .Details {
@@ -272,20 +351,112 @@ footer .Details a:hover {
   color: #2575fc;
 }
 
-/* Responsive Grid Layout */
-@media (max-width: 768px) {
-  /* Stack layout for smaller screens */
-  header {
-    grid-template-columns: 1fr;
-  }
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+        padding: 8px;
+    }
 
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .left-section {
+        justify-content: flex-start;
+    }
 
-  main {
-    grid-template-columns: 1fr; /* Single column layout on mobile */
-    padding: 6px 10px;
-  }
+    .left-section .logo {
+        max-width: 60px;
+    }
+
+    .left-section ul {
+        gap: 10px;
+    }
+
+    .left-section ul li a {
+        font-size: 0.9rem;
+    }
+
+    .right-section {
+        justify-content: flex-end;
+    }
+
+    .cart-icon {
+        width: 25px;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr 1fr; /* 3-column layout */
+        grid-template-rows: 0.5fr 0.1fr;
+        padding: 2px
+    }
+
+    footer .Details {
+        align-items: end;
+        margin-top: 10px;
+    }
+
+    footer .Details a {
+        font-size: 0.9rem;
+    }
+
+    footer .social-media {
+        justify-content: last baseline;
+    }
+
+    footer .copyright{
+      font-size: auto;
+    }
+    
+    footer .Logo img {
+        max-width: 80px;
+    }
+
+    main .cards-carousel{
+      height: 500px;
+    }
+}
+
+/* For very small screens (like mobile phones) */
+@media only screen and (max-width: 430px) {
+    header {
+        padding: 6px;
+    }
+
+    .left-section .logo {
+        max-width: 50px;
+    }
+
+    .left-section ul {
+        gap: 8px;
+    }
+
+    .left-section ul li a {
+        font-size: 0.8rem;
+    }
+
+    .right-section {
+        justify-content: space-around;
+    }
+
+    .cart-icon {
+        width: 20px;
+    }
+
+    footer {
+        padding: 6px;
+    }
+
+    footer .Details a {
+        font-size: 0.9rem;
+    }
+
+    footer .Logo img {
+        max-width: 60px;
+    }
+
+    footer .social-media {
+        gap: 10px;
+    }
+    footer .social-media img{
+      max-width: 30px ;
+      margin-left: 2px;
+    }
 }
