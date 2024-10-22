@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mainContent.innerHTML = `
             <h1 style ="color:silver">Smart Mart Map</h1>
             <div class="map-container">
-                <img src="image/Mart map.png" alt="Smart Mart Map" style="width: 100%; height: auto;">
+                <img src="image/Mart map.png" alt="Smart Mart Map" style=" align-item:center ; width: 100%; height: auto;">
             </div>
         `;
     });
@@ -89,4 +89,25 @@ dots.forEach((dot, index) => {
 // Initialize dots on load
 updateDots();
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Add event listener to the Items link
+    document.getElementById('itemsbutton').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
 
+        // Fetch the content of items.html
+        fetch('add ons/items.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(html => {
+                // Replace the main content with the fetched HTML
+                document.getElementById('mainContent').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+    });
+});
