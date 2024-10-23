@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-rows: auto auto auto; /* Header, content, footer */
+  grid-template-rows: 0.1fr 2fr 0.1fr; /* Header, content, footer */
   min-height: 100vh;
 }
 
@@ -446,7 +446,7 @@ footer .Details a:hover {
   }
 
   footer .Details a {
-    font-size: 0.1rem;
+    font-size: 0.8rem;
   }
 
   footer .Logo img {
